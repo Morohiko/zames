@@ -35,7 +35,7 @@ public class PersonMovement : MonoBehaviour
         }
         //
 
-        renderer.color = isSelected ? Color.black : Color.white;
+        renderer.color = isSelected ? new Color(0.16f, 1f, 0f) : Color.white;
         MovePlayer();
     }
 
@@ -44,7 +44,7 @@ public class PersonMovement : MonoBehaviour
     }
 
     private void OnMouseDown() {
-        isSelected = true;
+        isSelected  = !isSelected;
     }
 
     private void MovePlayer()
