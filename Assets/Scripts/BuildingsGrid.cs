@@ -30,13 +30,17 @@ public class BuildingsGrid : MonoBehaviour
         {
             Vector2 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             
-            int x = Mathf.RoundToInt(worldPosition.x);
-            int y = Mathf.RoundToInt(worldPosition.y);
+            // int x = Mathf.RoundToInt(worldPosition.x);
+            // int y = Mathf.RoundToInt(worldPosition.y);
 
+            float x = worldPosition.x;
+            float y = worldPosition.y;
+            
             bool available = true;
-
-            if (x < 0 || x > GridSize.x - flyingBuilding.size.x) available = false;
-            if (y < 0 || y > GridSize.y - flyingBuilding.size.y) available = false;
+            
+            /* out of range */
+            // if (x < 0 || x > GridSize.x - flyingBuilding.size.x) available = false;
+            // if (y < 0 || y > GridSize.y - flyingBuilding.size.y) available = false;
             if (available && IsPlaceTaken(x, y)) available = false;
 
             flyingBuilding.transform.position = new Vector2(x, y);
@@ -49,29 +53,29 @@ public class BuildingsGrid : MonoBehaviour
         }
     }
 
-    private bool IsPlaceTaken(int placeX, int placeY)
+    private bool IsPlaceTaken(float placeX, float placeY)
     {
-        for (int x = 0; x < flyingBuilding.size.x; x++)
-        {
-            for (int y = 0; y < flyingBuilding.size.y; y++)
-            {
-                if (grid[placeX + x, placeY + y] != null)
-                    return true;
-            }
-        }
+        // for (int x = 0; x < flyingBuilding.size.x; x++)
+        // {
+        //     for (int y = 0; y < flyingBuilding.size.y; y++)
+        //     {
+        //         if (grid[placeX + x, placeY + y] != null)
+        //             return true;
+        //     }
+        // }
 
         return false;
     }
     
-    private void PlaceFlyingBuilding(int placeX, int placeY)
+    private void PlaceFlyingBuilding(float placeX, float placeY)
     {
-        for (int x = 0; x < flyingBuilding.size.x; x++)
-        {
-            for (int y = 0; y < flyingBuilding.size.y; y++)
-            {
-                grid[placeX + x, placeY + y] = flyingBuilding;
-            }
-        }
+        // for (int x = 0; x < flyingBuilding.size.x; x++)
+        // {
+        //     for (int y = 0; y < flyingBuilding.size.y; y++)
+        //     {
+        //         grid[placeX + x, placeY + y] = flyingBuilding;
+        //     }
+        // }
         
         flyingBuilding.SetNormal();
         flyingBuilding = null;
