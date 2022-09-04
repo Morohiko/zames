@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 public class CameraBehaviour : MonoBehaviour
 {
     public GameObject obj;
-    public float speed = 2;
+    public float speed = 0.5f;
 
     void Start()
     {
@@ -17,9 +17,17 @@ public class CameraBehaviour : MonoBehaviour
     void Update()
     {
         /* camera is controlled by keys */
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + speed, this.transform.position.z);
+        } else
         if (Input.GetKeyDown(KeyCode.A))
         {
             this.transform.position = new Vector3(this.transform.position.x - speed, this.transform.position.y, this.transform.position.z);
+        } else
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y - speed, this.transform.position.z);
         } else
         if (Input.GetKeyDown(KeyCode.D))
         {
