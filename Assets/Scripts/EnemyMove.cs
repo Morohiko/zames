@@ -41,7 +41,7 @@ public class EnemyMove : MonoBehaviour
 
         if (current_health <= 0)
         {   
-            Debug.Log("Enemy Destroy");
+            // Debug.Log("Enemy Destroy");
             Destroy(gameObject);
         }
     }
@@ -53,7 +53,7 @@ public class EnemyMove : MonoBehaviour
     
      void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Enemy: Collision " + collision.gameObject.tag);
+        // Debug.Log("Enemy: Collision " + collision.gameObject.tag);
 
         /* destroy if end of way */
         if (collision.gameObject.tag == "Finish")

@@ -23,10 +23,10 @@ public class PersonMovement : MonoBehaviour
         // Test only
         // TODO: move it to UserControl.cs
         if (Input.GetMouseButtonDown(0)) {
-            Debug.Log("Input.GetMouseButtonDown(0)");
+            // Debug.Log("Input.GetMouseButtonDown(0)");
         }
         if (Input.GetMouseButtonDown(1)) {
-            Debug.Log("Input.GetMouseButtonDown(1)");
+            // Debug.Log("Input.GetMouseButtonDown(1)");
             if (isSelected) {
                 Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 newPersonPosition = new Vector2(worldPosition.x, worldPosition.y);

@@ -15,7 +15,6 @@ public class Building : MonoBehaviour
 
     void Start()
     {   
-        Debug.Log("TEST");
         renderer = GetComponent<Renderer>();
     }
 

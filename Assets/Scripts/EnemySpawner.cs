@@ -17,7 +17,7 @@ public class EnemySpawner : MonoBehaviour
     
     void EnemySpawn()
     {   
-    Debug.Log("spawn");
+    // Debug.Log("spawn");
         GameObject.Instantiate(enemy, spawnpoint.transform.position, Quaternion.identity);
     }
 

@@ -8,6 +8,7 @@ public class BuildingsGrid : MonoBehaviour
     public Vector2Int GridSize = new Vector2Int(10,10);
     public Building[,] grid;
     private Building flyingBuilding;
+    public bool available = false;
 
     private void Awake()
     {
@@ -22,6 +23,7 @@ public class BuildingsGrid : MonoBehaviour
         }
         
         flyingBuilding = Instantiate(buildingPrefab);
+        available = false;
     }
     
     void Update()
@@ -36,12 +38,12 @@ public class BuildingsGrid : MonoBehaviour
             float x = worldPosition.x;
             float y = worldPosition.y;
             
-            bool available = true;
+            
             
             /* out of range */
             // if (x < 0 || x > GridSize.x - flyingBuilding.size.x) available = false;
             // if (y < 0 || y > GridSize.y - flyingBuilding.size.y) available = false;
-            if (available && IsPlaceTaken(x, y)) available = false;
+            //if (available && IsPlaceTaken(x, y)) available = false;
 
             flyingBuilding.transform.position = new Vector2(x, y);
             flyingBuilding.SetTransparent(available);
@@ -52,6 +54,28 @@ public class BuildingsGrid : MonoBehaviour
             }
         }
     }
+    //
+    // private void OnCollisionEnter2D(Collision2D col)
+    // {
+    //     Debug.Log("COLLISION");
+    //     // available = true;
+    // }
+    //
+    // private void OnTriggerEnter2D(Collider2D col)
+    // {
+    //     Debug.Log("TRIGGER");
+    //     // available = true;
+    // }
+    //
+    // private void OnTriggerExit2D(Collider2D other)
+    // {
+    //     available = false;
+    // }
+    //
+    // private void OnTriggerStay2D(Collider2D other)
+    // {
+    //     available = true;
+    // }
 
     private bool IsPlaceTaken(float placeX, float placeY)
     {
