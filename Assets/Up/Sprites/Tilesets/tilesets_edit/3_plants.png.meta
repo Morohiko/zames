@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -1326,14 +1326,14 @@ TextureImporter:
       3_plants_13: -1612375142
       3_plants_29: -1213824408
       3_plants_51: -1890102675
-      3_plants_36: -2133491649
-      3_plants_2: 2142428201
-      3_plants_11: 1508878567
-      3_plants_40: 1809705511
-      3_plants_6: -582274995
-      3_plants_27: -1266174489
-      3_plants_19: -1786653344
       3_plants_52: -391223570
+      3_plants_19: -1786653344
+      3_plants_2: 2142428201
+      3_plants_36: -2133491649
+      3_plants_27: -1266174489
+      3_plants_40: 1809705511
+      3_plants_11: 1508878567
+      3_plants_6: -582274995
       3_plants_34: -151971119
       3_plants_45: 446647491
       3_plants_49: 2123252595
